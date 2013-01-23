@@ -1,0 +1,8 @@
+\subsubsection usage Usage
+\verbatim
+<node name="map_maker" pkg="TurtleKinect" type="map_maker">
+  <param name="DistanceThreshold" type="double" value="0.2" />
+  <param name="MaxIterations" type="int" value="100" />
+</node>
+\endverbatim
+

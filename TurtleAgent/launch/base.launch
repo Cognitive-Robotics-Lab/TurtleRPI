@@ -1,0 +1,7 @@
+<launch>
+
+  <!--- Run the kinect -->
+  <include file="$(find turtlebot_bringup)/kinect.launch" />
+
+
+</launch>

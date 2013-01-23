@@ -1,0 +1,8 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~ClusterTolerance" : \b [double] Euclidean Cluster Tolerance min: 0.0001, default: 0.3, max: 2.0
+- \b "~MinClusterSize" : \b [int] Min Cluster Points min: 0, default: 50, max: 400
+- \b "~MaxClusterSize" : \b [int] Max Cluster Points min: 400, default: 250000, max: 1000000
+

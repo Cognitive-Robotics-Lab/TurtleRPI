@@ -1,0 +1,27 @@
+<package>
+  <description brief="TurtleMaster">
+
+     TurtleMaster
+
+  </description>
+  <author>Martin</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/TurtleMaster</url>
+
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+  <depend package="TurtleMsgSrv"/>
+
+	<rosbuild2>
+		<msgs>
+			msg/conf.msg
+			msg/coord.msg
+		</msgs>
+	</rosbuild2>
+</package>
+
+

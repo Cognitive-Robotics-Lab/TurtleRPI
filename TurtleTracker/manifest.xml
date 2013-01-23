@@ -1,0 +1,18 @@
+<package>
+  <description brief="TurtleTracker">
+
+     TurtleTracker
+
+  </description>
+  <author>rpi</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/TurtleTracker</url>
+  <depend package="rospy"/>
+  <depend package="tf"/>
+  <depend package="robot_pose_ekf"/>
+  <depend package="nav_msgs"/>
+
+</package>
+
+

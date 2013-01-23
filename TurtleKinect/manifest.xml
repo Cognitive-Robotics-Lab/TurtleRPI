@@ -1,0 +1,25 @@
+<package>
+  <description brief="TurtleKinect">
+
+     TurtleKinect
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/TurtleKinect</url>
+
+
+  <depend package="roscpp"/>
+  <depend package="roslib"/>
+  <depend package="geometry_msgs"/>
+  <depend package="openni"/>
+  <depend package="nite"/>
+  <depend package="kdl"/>
+  <depend package="tf"/>
+  <depend package="pcl"/>
+  <depend package="dynamic_reconfigure"/>
+
+</package>
+
+

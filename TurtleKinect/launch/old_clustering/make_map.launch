@@ -1,0 +1,14 @@
+<launch>
+  <node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find TurtleKinect)/kinect.vcg" />
+
+  <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen" />
+
+  <node pkg="TurtleKinect" type="map_maker" name="map_maker" output="screen">
+    <remap from="~input" to="/camera_top/rgb/points" />
+    <rosparam>
+      MaxIterations: 10
+      DistanceThreshold: 0.3
+    </rosparam>
+  </node>
+  
+</launch>

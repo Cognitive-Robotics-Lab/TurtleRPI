@@ -1,0 +1,13 @@
+<launch>
+  <node name="ar_recog" pkg="ar_recog" type="ar_recog" output="screen" cwd="node">
+    <remap from="camera_info" to="/camera_top_info"/>
+    <remap from="image" to="/camera_top/rgb/image_color" />
+  </node>
+  <rosparam> aov:  0.99 </rosparam>
+
+  <node name="image_view" pkg="image_view" type="image_view" output="screen" cwd="node">
+
+    <remap from="image" to="/ar/image"/>
+  </node>
+
+</launch>

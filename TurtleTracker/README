@@ -1,0 +1,12 @@
+To launch the Kinect Tracker, and publish to /vo:
+    roslaunch TurtleTracker TurtleTracker.launch
+
+To launch the wiimote and publish to /imu_data
+    rosrun wiimote kid_imu.py imu/data:=imu_data
+
+The combined pose ekf is published to /robot_pose_ekf/odom
+
+TO DO:
+  - The robot pose ekf does not work when the wiimote is also running (check error messages)
+  - The covariances for the TurtleTracker haven't been analyzed, maybe they should be changed
+
