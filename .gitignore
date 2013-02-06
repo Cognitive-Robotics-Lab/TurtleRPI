@@ -1,3 +1,15 @@
+bin
+build
+srv_gen
+.gitignore~
+*.txt~
+*.launch~
+*.yaml~
+*.py~
+*.cpp~
+*.msg~
+*.srv~
+*.xml~
 CMakeCache.txt
 CMakeFiles
 Makefile
