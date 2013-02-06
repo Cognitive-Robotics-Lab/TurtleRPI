@@ -29,6 +29,6 @@ find_package( OpenCV REQUIRED )
 #target_link_libraries(${PROJECT_NAME} another_library)
 #rosbuild_add_boost_directories()
 #rosbuild_link_boost(${PROJECT_NAME} thread)
-rosbuild_add_executable(PersonTracker src/PersonTracker.cpp)t
+rosbuild_add_executable(PersonTracker src/PersonTracker.cpp)
 target_link_libraries( PersonTracker ${OpenCV_LIBS} )
 #target_link_libraries(example ${PROJECT_NAME})
