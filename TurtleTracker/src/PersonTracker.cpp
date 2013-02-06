@@ -4,6 +4,8 @@
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/core/version.hpp>
 
 namespace enc = sensor_msgs::image_encodings;
 
@@ -18,12 +20,13 @@ class PersonTracker {
 
 public:
     PersonTracker()
-        : it_(nh_) {
+        : nh_("~"), it_(nh_) {
         image_pub_ = it_.advertise("image_out", 1);
         image_sub_ = it_.subscribe("image_in", 1, &PersonTracker::image_in_callback, this);
 
         cv::namedWindow(WINDOW_IN);
         cv::namedWindow(WINDOW_OUT);
+        ROS_INFO("Opencv Version %s", CV_VERSION);
     }
 
     ~PersonTracker() {
@@ -34,7 +37,7 @@ public:
     void image_in_callback(const sensor_msgs::ImageConstPtr& msg) {
         cv_bridge::CvImagePtr cv_ptr;
         try {
-            cv_ptr = cv_bridge::toCvCopy(msg, enc::BGR8);
+            cv_ptr = cv_bridge::toCvCopy(msg, enc::BAYER_GRBG8);
         } catch (cv_bridge::Exception& e) {
             ROS_ERROR("cv_bridge exception: %s", e.what());
             return;
