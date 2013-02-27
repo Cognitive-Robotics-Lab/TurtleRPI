@@ -1,0 +1,12 @@
+<launch>
+  <node pkg="TurtleTracker" type="PersonTrackerHaar" name="PersonTrackerHaar" output="screen"
+  cwd="node">
+    <remap from="~/image_in" to="/camera_top/rgb/image_raw"/>
+  </node>
+ <!-- 
+   <node pkg="TurtleTracker" type="PersonTrackerHog" name="PersonTrackerHog" output="screen"
+  cwd="node">
+    <remap from="~/image_in" to="/camera_top/rgb/image_raw"/>
+  </node>
+ -->
+</launch>

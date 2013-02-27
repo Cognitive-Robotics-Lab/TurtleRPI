@@ -1,14 +1,14 @@
 <launch>
 
   <!-- Run the map server -->
-  <arg name="map_file" default="$(find TurtleAgent)/maps/crl_open_map.yaml"/>
+  <arg name="map_file" default="$(find TurtleAgent)/maps/lab.yaml"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
   <!--- Run Move Base -->
   <include file="$(find TurtleAgent)/config/move_base_turtlebot.launch" />
   
   <!--- Run AMCL -->
-  <arg name="use_map_topic" default="true"/>
+  <arg name="use_map_topic" default="false"/>
   <arg name="scan_topic" default="scan" />
 
   <node pkg="amcl" type="amcl" name="amcl">
