@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find turtlebot_bringup)/kinect.launch" />
+
+  <node pkg="TurtleTracker" type="CentroidServer.py" name="CentroidServer" output="screen" args="127.0.0.1 8050"/>
+
+  <node name="icreate_driver" pkg="irobot_create_2_1" type="driver.py" />
+</launch>

@@ -21,11 +21,16 @@ class CentroidClient(SocketServer.BaseRequestHandler):
                 # self.request is the TCP socket connected to the client
                 self.data = self.request.recv(4096).strip()
                 try:
-                    (trans, rot) = tf_listener.lookupTransform(
-                        '/camera_depth_frame', '/user_1', rospy.Time(0))
-                    msg = "{ x:%0.4f, y:%0.4f, z:%0.4f, rx:%0.4f, ry:%0.4f, rz:%0.4f }\n" % (
-                        trans[0], trans[1], trans[2], rot[0], rot[1], rot[2])
-                    self.request.sendall(msg)
+                    for i in range(20):
+                        try:
+                            (trans, rot) = tf_listener.lookupTransform(
+                                '/camera_depth_frame', '/user_%d' % i, rospy.Time(0))
+                            msg = "{ x:%0.4f, y:%0.4f, z:%0.4f, rx:%0.4f, ry:%0.4f, rz:%0.4f }\n" % (
+                                trans[0], trans[1], trans[2], rot[0], rot[1], rot[2])
+                            self.request.sendall(msg)
+                            break
+                        except:
+                            pass
                 except:  # data errors
                     # send to log and other side
                     err = [sys.exc_info()[0].__name__, str(sys.exc_info()[1])]
