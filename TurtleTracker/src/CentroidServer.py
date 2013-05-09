@@ -25,7 +25,7 @@ class CentroidClient(SocketServer.BaseRequestHandler):
                         try:
                             (trans, rot) = tf_listener.lookupTransform(
                                 '/camera_depth_frame', '/user_%d' % i, rospy.Time(0))
-                            msg = "{ x:%0.4f, y:%0.4f, z:%0.4f, rx:%0.4f, ry:%0.4f, rz:%0.4f }\n" % (
+                            msg = '{" x":%0.4f," y":%0.4f," z":%0.4f, "rx":%0.4f, "ry":%0.4f, "rz":%0.4f }\n' % (
                                 trans[0], trans[1], trans[2], rot[0], rot[1], rot[2])
                             self.request.sendall(msg)
                             break
